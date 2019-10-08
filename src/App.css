@@ -1,7 +1,9 @@
 .App {
   text-align: center;
 }
-
+.Dnd-area{
+  margin-left: 25%;
+}
 .App-logo {
   height: 40vmin;
 }

@@ -1,15 +1,20 @@
 import React from 'react';
 import './App.css';
-import Navigation from './components/Navigation';
+import Navigation from './Components/Navigation';
 import DndTest from './Dnd/DndTest';
+import Toolbox from './Components/Toolbox';
+import { makeStyles } from '@material-ui/core/styles';
+import Button from '@material-ui/core/Button';
 
 function App() {
+
   return (
     <div className="App">
 
         <Navigation />
+        <Toolbox />
         <DndTest />
-        
+
     </div>
   );
 }

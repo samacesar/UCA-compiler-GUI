@@ -7,7 +7,6 @@ const Wrapper = styled.div `
     width: 100%;
     padding: 32px;
     display: flex;
-    justify-content: center;
 `;
 
 const Item = styled.div `
@@ -19,9 +18,18 @@ const Item = styled.div `
 
 const droppableStyle = {
     backgroundColor: '#555',
-    width: '250px',
-    height: '400px',
-    margin: '32px'
+    width: '200px',
+    height: '200px',
+    marginLeft: '25%',
+    marginTop: '5%',
+};
+
+const droppableStyle2 = {
+    backgroundColor: '#555',
+    width: '200px',
+    height: '200px',
+    marginLeft: '5%',
+    marginTop: '5%',
 };
 
 export default class DndText extends React.Component {
@@ -29,9 +37,8 @@ export default class DndText extends React.Component {
         return <Wrapper>
             <Droppable id="dr1" style={droppableStyle}>
                 <Draggable id="item1" style={{ margin: '8px' }}><Item>Procedimiento</Item></Draggable>
-                <Draggable id="item2" style={{ margin: '8px' }}><Item>Procedimiento2</Item></Draggable>
             </Droppable>
-            <Droppable id="dr2" style={droppableStyle}>
+            <Droppable id="dr2" style={droppableStyle2}>
             </Droppable>
               </Wrapper>
     }
