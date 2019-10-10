@@ -5,6 +5,7 @@ import Droppable from '../Droppable';
 
 const Wrapper = styled.div `
     width: 100%;
+    margin-left: 15%;
     padding: 32px;
     display: flex;
 `;
@@ -20,25 +21,16 @@ const droppableStyle = {
     backgroundColor: '#555',
     width: '200px',
     height: '200px',
-    marginLeft: '25%',
-    marginTop: '5%',
+    marginLeft: '25px',
+    marginTop: '25px',
 };
 
-const droppableStyle2 = {
-    backgroundColor: '#555',
-    width: '200px',
-    height: '200px',
-    marginLeft: '5%',
-    marginTop: '5%',
-};
 
 export default class DndText extends React.Component {
     render(){
         return <Wrapper>
             <Droppable id="dr1" style={droppableStyle}>
                 <Draggable id="item1" style={{ margin: '8px' }}><Item>Procedimiento</Item></Draggable>
-            </Droppable>
-            <Droppable id="dr2" style={droppableStyle2}>
             </Droppable>
               </Wrapper>
     }

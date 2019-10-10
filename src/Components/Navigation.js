@@ -4,7 +4,7 @@ class Navigation extends React.Component {
     render() {
         return <nav className = "navbar fixed-top navbar-dar bg-dark">
         <a href="" className="text-white">
-          Compilador TEO
+          AURIGA compiler
         </a>
        </nav>;    
     }
