@@ -14,9 +14,10 @@ class Navigation extends React.Component {
   }
   downloadTxtFile = () => {
     const element = document.createElement("a");
-    const file = new Blob([this.myRef.current.value], {type: 'text/plain'});
+    let codigo = operatorPile[0]+"\r\n"+operatorPile[1]+"\r\n"+operatorPile[2]
+    const file = new Blob([codigo], {type: 'text/plain'});
     element.href = URL.createObjectURL(file);
-    element.download = "myFile.txt";
+    element.download = "Auriga.txt";
     alert(this.myRef.current.value);
     document.body.appendChild(element); // Required for this to work in FireFox
     element.click();
