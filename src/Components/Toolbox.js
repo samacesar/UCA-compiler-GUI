@@ -1,5 +1,9 @@
 import React from 'react';
 import '../App.css'
+import ValSet from './ValuesSetter';
+import SiFunc from './OperatorSi';
+import ParaFunc from './OperatorPara';
+
 export let operatorPile = [];
 export let arrayPosition = 0;
 export let selectedOperator = "none";
@@ -10,6 +14,11 @@ class Toolbox extends React.Component {
     
     constructor(props) {
         super(props);
+
+        this.state = {
+          showComponent: false,
+        };
+        
         this.constOperator = React.createRef();
         this.entOperator = React.createRef();
         this.flotOperator = React.createRef();
@@ -19,20 +28,10 @@ class Toolbox extends React.Component {
         this.siFuncion = React.createRef();
       }
 
-      downloadTxtFile = () => {
-        const element = document.createElement("a");
-        const file = new Blob([ this.myRef.current.value], {type: 'text/plain'});
-        element.href = URL.createObjectURL(file);
-        element.download = "Auriga.txt";
-        alert(this.myRef.current.value);
-        document.body.appendChild(element); // Required for this to work in FireFox
-        element.click();
-      }
  
       constPush = () => {
         selectedOperator = this.constOperator.current.value;
         arrayPosition+=1;
-        alert(operatorPile[0]+operatorPile[1]+operatorPile[2])
       }
       entPush = () => {
         selectedOperator = this.entOperator.current.value;
@@ -62,11 +61,18 @@ class Toolbox extends React.Component {
       siPush = () => {
         selectedOperator = this.siFuncion.current.value;
         arrayPosition+=1;
-        alert(operatorPile[0]+operatorPile[1]+operatorPile[2])
+        this.setState({
+          showComponent: true,
+        })
       }
 
     render() {
-        return <div class="w3-sidebar w3-light-grey w3-bar-block">
+        return <div>
+        {this.state.showComponent ?
+          <SiFunc /> :
+          null
+          }
+        <div class="w3-sidebar w3-light-grey w3-bar-block">
             <br></br>
             <p className="h3">Bloques</p>
             <div>        <br></br>
@@ -91,7 +97,6 @@ class Toolbox extends React.Component {
             <div>        
             <br></br>
             <div>    
-
             <button  ref={this.siFuncion} value="SI" type="button" onClick={this.siPush} className="btn btn-warning btn-lg">SI</button>
             </div>
             <div>        
@@ -105,7 +110,9 @@ class Toolbox extends React.Component {
             <br></br>
             <button type="button" className="btn btn-primary btn-lg">ESCR</button>
             </div>
+        </div>    
       </div>;
+      
     }
 }
 export default Toolbox;

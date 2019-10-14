@@ -5,8 +5,6 @@ import Droppable from '../Droppable';
 import ValSet from '../../Components/ValuesSetter';
 import SiFunc from '../../Components/OperatorSi';
 import ParaFunc from '../../Components/OperatorPara';
-
-
 import {selectedOperator} from '../../Components/Toolbox';
 
 const Wrapper = styled.div `

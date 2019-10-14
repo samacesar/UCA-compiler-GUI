@@ -9,12 +9,16 @@ const divi = {
 class divigation extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      showComponent: false,
+    };
+    this.onValClick = this.onValClick.bind(this);
     this.myRef = React.createRef();
     this.myValName = React.createRef();
     this.myValue = React.createRef();
   }
   setVariable = () => {
-    varSet = selectedOperator + " "+ this.myValName.current.value+ " := "+this.myValue.current.value + " ; ";
+    varSet = selectedOperator + " "+ this.myValName.current.value+ " := "+this.myValue.current.value + " ; "+"\r\n";
     operatorPile.push(varSet);
     alert(varSet);
   }

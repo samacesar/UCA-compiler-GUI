@@ -14,7 +14,9 @@ class Navigation extends React.Component {
   }
   downloadTxtFile = () => {
     const element = document.createElement("a");
-    let codigo = operatorPile[0]+"\r\n"+operatorPile[1]+"\r\n"+operatorPile[2]
+    
+    let codigo = operatorPile.join(" ");
+    alert(codigo);
     const file = new Blob([codigo], {type: 'text/plain'});
     element.href = URL.createObjectURL(file);
     element.download = "Auriga.txt";

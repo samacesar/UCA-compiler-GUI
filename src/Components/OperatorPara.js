@@ -1,6 +1,7 @@
 import React from 'react';
 import { relative } from 'path';
 import { selectedOperator, operatorPile } from './Toolbox';
+
 let varSet = "";
 const divi = {
   position: 'relative',
@@ -9,6 +10,7 @@ const divi = {
 class divigation extends React.Component {
   constructor(props) {
     super(props);
+    
     this.myRef = React.createRef();
     this.initVar = React.createRef();
     this.endVar = React.createRef();
@@ -16,14 +18,12 @@ class divigation extends React.Component {
     this.retVar = React.createRef();
   }
   setVariable = () => {
-    varSet = selectedOperator + " ( "+ this.initVar.current.value+ " , "+ this.endVar.current.value+" , "+this.incrementVar.current.value+" ) { ";
+    varSet = "\n"+selectedOperator + " ( "+ this.initVar.current.value+ " , "+ this.endVar.current.value+" , "+this.incrementVar.current.value+" ) {";
     operatorPile.push(varSet);
     /*varSet =  array de acciones por hacer*/
     //operatorPile.push(varSet);
-    varSet = "RET "+this.retVar.current.value+" ; }"
+    varSet ="\n" +"RET "+this.retVar.current.value+" ; }"+"\n";
     operatorPile.push(varSet);
-
-    alert(varSet);
   }
 
     render() {
