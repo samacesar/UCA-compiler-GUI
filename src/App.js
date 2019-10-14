@@ -15,7 +15,6 @@ function App() {
 
         <Navigation/>
         <Toolbox />
-        <SiFunc></SiFunc>
         <DndTest />
 
     </div>
