@@ -28,9 +28,9 @@ class Navigation extends React.Component {
         style={navi}>
           <nav>
         <a href="" className="text-white">
-          AURIGA compiler
+          AURIGA compiler  &nbsp; &nbsp; &nbsp;
         </a>
-        <button ref={this.myRef} value="123" type="button" class="btn btn-success" onClick={this.downloadTxtFile}>COMPILAR</button>
+        <button ref={this.myRef} style={{margin: '0.5%'}} value="123" type="button" class="btn btn-success" onClick={this.downloadTxtFile}>COMPILAR</button>
        </nav>
        </div>;
     }

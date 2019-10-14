@@ -2,7 +2,9 @@ import React from 'react';
 import '../App.css'
 export let operatorPile = [];
 export let arrayPosition = 0;
+export let selectedOperator = "none";
 
+operatorPile[0]="INICIO";
 
 class Toolbox extends React.Component {
     
@@ -11,6 +13,10 @@ class Toolbox extends React.Component {
         this.constOperator = React.createRef();
         this.entOperator = React.createRef();
         this.flotOperator = React.createRef();
+        this.cadOperator = React.createRef();
+        this.boolOperator = React.createRef();
+        this.paraFuncion = React.createRef();
+        this.siFuncion = React.createRef();
       }
 
       downloadTxtFile = () => {
@@ -24,17 +30,37 @@ class Toolbox extends React.Component {
       }
  
       constPush = () => {
-        operatorPile.push(this.constOperator.current.value);
+        selectedOperator = this.constOperator.current.value;
         arrayPosition+=1;
         alert(operatorPile[0]+operatorPile[1]+operatorPile[2])
       }
       entPush = () => {
-        operatorPile.push(this.entOperator.current.value);
+        selectedOperator = this.entOperator.current.value;
         arrayPosition+=1;
         alert(operatorPile[0]+operatorPile[1]+operatorPile[2])
       }
       flotPush = () => {
-        operatorPile.push(this.flotOperator.current.value);
+        selectedOperator = this.flotOperator.current.value;
+        arrayPosition+=1;
+        alert(operatorPile[0]+operatorPile[1]+operatorPile[2])
+      }
+      cadPush = () => {
+        selectedOperator = this.cadOperator.current.value;
+        arrayPosition+=1;
+        alert(operatorPile[0]+operatorPile[1]+operatorPile[2])
+      }
+      boolPush = () => {
+        selectedOperator = this.boolOperator.current.value;
+        arrayPosition+=1;
+        alert(operatorPile[0]+operatorPile[1]+operatorPile[2])
+      }
+      paraPush = () => {
+        selectedOperator = this.paraFuncion.current.value;
+        arrayPosition+=1;
+        alert(operatorPile[0]+operatorPile[1]+operatorPile[2])
+      }
+      siPush = () => {
+        selectedOperator = this.siFuncion.current.value;
         arrayPosition+=1;
         alert(operatorPile[0]+operatorPile[1]+operatorPile[2])
       }
@@ -47,28 +73,31 @@ class Toolbox extends React.Component {
             <button ref={this.constOperator} value="CONST"  onClick={this.constPush} type="button" className="btn btn-info btn-lg">CONST</button>
             </div>
             <div>        <br></br>
-            <button ref={this.entOperator}value={this.operator} onClick={this.entPush} type="button" value="ENT" className="btn btn-info btn-lg">ENT</button>
+            <button ref={this.entOperator} onClick={this.entPush} type="button" value="ENT" className="btn btn-info btn-lg">ENT</button>
             </div>
             <div>        <br></br>
-            <button ref={this.flotOperator} value={this.operator} onClick={this.flotPush} type="button" value="FLOT" className="btn btn-info btn-lg">FLOT</button>
+            <button ref={this.flotOperator} onClick={this.flotPush} type="button" value="FLOT" className="btn btn-info btn-lg">FLOT</button>
             </div>
             <div>        <br></br>
-            <button type="button" className="btn btn-info btn-lg">CAR</button>
+            <button ref={this.cadOperator} value="CAD" onClick={this.cadPush} type="button" className="btn btn-info btn-lg">CAD</button>
             </div>
             <div>        <br></br>
-            <button type="button" className="btn btn-info btn-lg">BOOL</button>
+            <button ref={this.boolOperator} value="BOOL" onClick={this.boolPush} type="button" className="btn btn-info btn-lg">BOOL</button>
             </div>
-            <div>        <br></br>
-            <button type="button" className="btn btn-primary btn-lg">HACER</button>
-            </div>
-            <div>        <br></br>
-            <button type="button" className="btn btn-warning btn-lg">PARA</button>
+            <br></br>
+            <div>    
+            <button ref={this.paraFuncion} value="PARA" onClick={this.paraPush}type="button" className="btn btn-warning btn-lg">PARA</button>
             </div>
             <div>        
             <br></br>
-            <button type="button" className="btn btn-warning btn-lg">SI</button>
+            <div>    
+
+            <button  ref={this.siFuncion} value="SI" type="button" onClick={this.siPush} className="btn btn-warning btn-lg">SI</button>
             </div>
-            <div>                
+            <div>        
+             <br></br>
+             <button type="button" className="btn btn-primary btn-lg">HACER</button>
+            </div>         
             <br></br>
             <button type="button" className="btn btn-primary btn-lg">LECT</button>
             </div>

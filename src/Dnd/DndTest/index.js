@@ -2,6 +2,12 @@ import React from 'react';
 import styled from 'styled-components';
 import Draggable from '../Draggable';
 import Droppable from '../Droppable';
+import ValSet from '../../Components/ValuesSetter';
+import SiFunc from '../../Components/OperatorSi';
+import ParaFunc from '../../Components/OperatorPara';
+
+
+import {selectedOperator} from '../../Components/Toolbox';
 
 const Wrapper = styled.div `
     width: 100%;
