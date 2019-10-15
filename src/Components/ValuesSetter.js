@@ -6,16 +6,22 @@ const divi = {
   position: 'relative',
 };
 
-class divigation extends React.Component {
+class VarSetter extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      showComponent: false,
+      showVarSet: false,
     };
+
     this.onValClick = this.onValClick.bind(this);
     this.myRef = React.createRef();
     this.myValName = React.createRef();
     this.myValue = React.createRef();
+  }
+  onValClick() {
+    this.setState({
+      showVarSet: true,
+    })
   }
   setVariable = () => {
     varSet = selectedOperator + " "+ this.myValName.current.value+ " := "+this.myValue.current.value + " ; "+"\r\n";
@@ -37,4 +43,4 @@ class divigation extends React.Component {
     }
 }
 
-export default divigation;
+export default VarSetter;

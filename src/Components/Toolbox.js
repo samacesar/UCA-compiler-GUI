@@ -8,6 +8,10 @@ export let operatorPile = [];
 export let arrayPosition = 0;
 export let selectedOperator = "none";
 
+let paraFlag = false;
+let siFlag = false;
+let boolFlag = false;
+
 operatorPile[0]="INICIO";
 
 class Toolbox extends React.Component {
@@ -16,7 +20,7 @@ class Toolbox extends React.Component {
         super(props);
 
         this.state = {
-          showComponent: false,
+          showSi: false,
         };
         
         this.constOperator = React.createRef();
@@ -32,46 +36,112 @@ class Toolbox extends React.Component {
       constPush = () => {
         selectedOperator = this.constOperator.current.value;
         arrayPosition+=1;
+        if (boolFlag == false){
+          this.setState({
+            showVarSet: true,
+          }) 
+          boolFlag = true;
+        }else{
+          this.setState({
+            showVarSet: false,
+          }) 
+          boolFlag = false;
+        }
       }
       entPush = () => {
         selectedOperator = this.entOperator.current.value;
         arrayPosition+=1;
-        alert(operatorPile[0]+operatorPile[1]+operatorPile[2])
+        if (boolFlag == false){
+          this.setState({
+            showVarSet: true,
+          }) 
+          boolFlag = true;
+        }else{
+          this.setState({
+            showVarSet: false,
+          }) 
+          boolFlag = false;
+        }
       }
       flotPush = () => {
         selectedOperator = this.flotOperator.current.value;
         arrayPosition+=1;
-        alert(operatorPile[0]+operatorPile[1]+operatorPile[2])
+        if (boolFlag == false){
+          this.setState({
+            showVarSet: true,
+          }) 
+          boolFlag = true;
+        }else{
+          this.setState({
+            showVarSet: false,
+          }) 
+          boolFlag = false;
+        }
       }
       cadPush = () => {
         selectedOperator = this.cadOperator.current.value;
         arrayPosition+=1;
-        alert(operatorPile[0]+operatorPile[1]+operatorPile[2])
+        if (boolFlag == false){
+          this.setState({
+            showVarSet: true,
+          }) 
+          boolFlag = true;
+        }else{
+          this.setState({
+            showVarSet: false,
+          }) 
+          boolFlag = false;
+        }
       }
       boolPush = () => {
         selectedOperator = this.boolOperator.current.value;
         arrayPosition+=1;
-        alert(operatorPile[0]+operatorPile[1]+operatorPile[2])
+        if (boolFlag == false){
+          this.setState({
+            showVarSet: true,
+          }) 
+          boolFlag = true;
+        }else{
+          this.setState({
+            showVarSet: false,
+          }) 
+          boolFlag = false;
+        } 
       }
       paraPush = () => {
         selectedOperator = this.paraFuncion.current.value;
         arrayPosition+=1;
-        alert(operatorPile[0]+operatorPile[1]+operatorPile[2])
+        if (paraFlag == false){
+          this.setState({
+            showPara: true,
+          }) 
+          paraFlag = true;
+        }else{
+          this.setState({
+            showPara: false,
+          }) 
+          paraFlag = false;
+        }     
       }
       siPush = () => {
         selectedOperator = this.siFuncion.current.value;
         arrayPosition+=1;
-        this.setState({
-          showComponent: true,
-        })
+        if (siFlag == false){
+          this.setState({
+            showSi: true,
+          }) 
+          siFlag = true;
+        }else{
+          this.setState({
+            showSi: false,
+          }) 
+          siFlag = false;
+        } 
       }
 
     render() {
         return <div>
-        {this.state.showComponent ?
-          <SiFunc /> :
-          null
-          }
+
         <div class="w3-sidebar w3-light-grey w3-bar-block">
             <br></br>
             <p className="h3">Bloques</p>
@@ -111,6 +181,18 @@ class Toolbox extends React.Component {
             <button type="button" className="btn btn-primary btn-lg">ESCR</button>
             </div>
         </div>    
+        {this.state.showVarSet ?
+          <ValSet /> :
+          null
+         }
+        {this.state.showSi ?
+          <SiFunc /> :
+          null
+          }
+        {this.state.showPara ?
+          <ParaFunc /> :
+          null
+          }
       </div>;
       
     }

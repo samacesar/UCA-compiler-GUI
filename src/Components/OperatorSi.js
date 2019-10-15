@@ -13,7 +13,7 @@ class divigation extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      showComponent: false,
+      showSi: false,
     };
     this.onSiClick = this.onSiClick.bind(this);
     this.myRef = React.createRef();
@@ -24,7 +24,7 @@ class divigation extends React.Component {
   }
   onSiClick() {
     this.setState({
-      showComponent: true,
+      showSi: true,
     })
   }
   setVariable = () => {
@@ -32,7 +32,7 @@ class divigation extends React.Component {
     operatorPile.push(varSet);
     alert(operatorPile[0]);
     varSet="";
-    varSet = "RET "+this.retVar.current.value+" ; }"+"\r\n";
+    varSet = "ESCR "+this.retVar.current.value+" ; }"+"\r\n";
     operatorPile.push(varSet);
   }
 
@@ -49,9 +49,9 @@ class divigation extends React.Component {
         </select> &nbsp;
         <input ref={this.var2} type="text" name="var2" ></input> 
         <div><br></br><button ref={this.add} value="123" type="button" class="btn btn-success" onClick={this.setVariable}> AÑADIR SENTENCIA</button></div><br></br>
-      <div>Retorna &nbsp; <input ref={this.retVar} type="text" name="returnVar" ></input> &nbsp;
+      <div>Escribir &nbsp; <input ref={this.retVar} type="text" name="returnVar" ></input> &nbsp;
        <button ref={this.myRef} value="123" type="button" class="btn btn-success" onClick={this.setVariable}>ACEPTAR</button> </div>
-       {this.state.showComponent ?
+       {this.state.showSi ?
         <SiFunc /> :
         null
         }
