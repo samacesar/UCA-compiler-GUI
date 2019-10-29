@@ -3,6 +3,7 @@ import '../App.css'
 import ValSet from './ValuesSetter';
 import SiFunc from './OperatorSi';
 import ParaFunc from './OperatorPara';
+import DND from '../Dnd/DndTest';
 
 export let operatorPile = [];
 export let arrayPosition = 0;
@@ -193,6 +194,7 @@ class Toolbox extends React.Component {
           <ParaFunc /> :
           null
           }
+            <DND></DND>
       </div>;
       
     }
