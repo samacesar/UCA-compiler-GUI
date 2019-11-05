@@ -50,6 +50,7 @@ export default class DndText extends React.Component {
         <Droppable id="dr3" style={droppableStyle}></Droppable>
         <Droppable id="dr4" style={droppableStyle}></Droppable>
         <Droppable id="dr5" style={droppableStyle}></Droppable>
+        <Droppable id="dr6" style={droppableStyle}></Droppable>
         <Droppable id="dr1" style={droppableStyle}></Droppable>
 
           </Wrapper>
