@@ -26,11 +26,11 @@ class divigation extends React.Component {
     })
   }
   setVariable = () => {
-    varSet = "\n"+selectedOperator + " ( "+ this.initVar.current.value+ " , "+ this.endVar.current.value+" , "+this.incrementVar.current.value+" ) {";
+    varSet = "\r\n"+selectedOperator + "("+ this.initVar.current.value+ ","+ this.endVar.current.value+","+this.incrementVar.current.value+"){";
     operatorPile.push(varSet);
     /*varSet =  array de acciones por hacer*/
     //operatorPile.push(varSet);
-    varSet ="\n" +"ESCR "+this.retVar.current.value+" ; }"+"\n";
+    varSet ="\n" +"ESCR "+this.retVar.current.value+";}"+"\n";
     operatorPile.push(varSet);
   }
 
